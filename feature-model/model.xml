@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendposition" value="1129,14"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and mandatory="true" name="EduFlex_LMS">
+			<and mandatory="true" name="LMS_Core">
+				<graphics key="collapsed" value="true"/>
+				<feature mandatory="true" name="User_Admin"/>
+				<feature mandatory="true" name="Course_Builder"/>
+			</and>
+			<alt mandatory="true" name="Hosting">
+				<graphics key="collapsed" value="true"/>
+				<feature name="Cloud_SaaS"/>
+				<feature name="On_Premise"/>
+			</alt>
+			<or name="Communication">
+				<graphics key="collapsed" value="true"/>
+				<feature name="Forums"/>
+				<feature name="Live_Chat"/>
+				<feature name="Video_Conference"/>
+			</or>
+			<or name="Evaluation">
+				<graphics key="collapsed" value="true"/>
+				<feature name="Quizzes"/>
+				<feature name="Peer_Review"/>
+				<feature name="Auto_Grading"/>
+			</or>
+			<or name="Content">
+				<graphics key="collapsed" value="true"/>
+				<feature name="Video_Stream"/>
+				<feature name="PDF_Viewer"/>
+				<feature name="SCORM_Support"/>
+			</or>
+			<and name="Enterprise_Addons">
+				<graphics key="collapsed" value="true"/>
+				<feature name="Multi_Tenancy"/>
+				<feature name="Billing_Gateway"/>
+				<feature name="Learning_Analytics"/>
+				<feature name="Plagiarism_Check"/>
+			</and>
+			<and mandatory="true" name="Security">
+				<graphics key="collapsed" value="true"/>
+				<feature mandatory="true" name="RBAC"/>
+				<feature name="MFA_Auth"/>
+				<feature name="SSO_Login"/>
+			</and>
+			<feature name="Digital_Badges"/>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>Video_Conference</var>
+				<var>Cloud_SaaS</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Plagiarism_Check</var>
+				<not>
+					<var>On_Premise</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Multi_Tenancy</var>
+				<var>Cloud_SaaS</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Billing_Gateway</var>
+				<var>Cloud_SaaS</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Digital_Badges</var>
+				<var>Learning_Analytics</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

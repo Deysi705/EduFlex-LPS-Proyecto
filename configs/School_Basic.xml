@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="EduFlex_LMS"/>
+	<feature automatic="selected" name="LMS_Core"/>
+	<feature automatic="selected" name="User_Admin"/>
+	<feature automatic="selected" name="Course_Builder"/>
+	<feature automatic="selected" name="Hosting"/>
+	<feature automatic="unselected" name="Cloud_SaaS"/>
+	<feature manual="selected" name="On_Premise"/>
+	<feature automatic="selected" name="Communication"/>
+	<feature manual="selected" name="Forums"/>
+	<feature name="Live_Chat"/>
+	<feature automatic="unselected" name="Video_Conference"/>
+	<feature name="Evaluation"/>
+	<feature name="Quizzes"/>
+	<feature name="Peer_Review"/>
+	<feature name="Auto_Grading"/>
+	<feature name="Content"/>
+	<feature name="Video_Stream"/>
+	<feature name="PDF_Viewer"/>
+	<feature name="SCORM_Support"/>
+	<feature automatic="selected" name="Enterprise_Addons"/>
+	<feature automatic="unselected" name="Multi_Tenancy"/>
+	<feature automatic="unselected" name="Billing_Gateway"/>
+	<feature automatic="selected" name="Learning_Analytics"/>
+	<feature automatic="unselected" name="Plagiarism_Check"/>
+	<feature automatic="selected" name="Security"/>
+	<feature automatic="selected" name="RBAC"/>
+	<feature name="MFA_Auth"/>
+	<feature name="SSO_Login"/>
+	<feature manual="selected" name="Digital_Badges"/>
+</configuration>
